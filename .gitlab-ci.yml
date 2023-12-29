@@ -26,15 +26,15 @@ sonar-scan:
   only:
     - master
 
-# Build Stage (replace placeholders with your actual build commands)
+# Build Stage (corrected format)
 build-job:
   stage: build
   script:
     - echo "Compiling the code..."
-    - # Your actual build commands here  (make sure they are within the list)
+    - # Your actual build commands here (make sure they are within the list)
     - echo "Compile complete."
 
-# Test Stage (replace placeholders with your actual test commands)
+# Test Stage
 unit-test-job:
   stage: test
   script:
@@ -49,7 +49,7 @@ lint-test-job:
     - # Your actual linting commands here
     - echo "No lint issues found."
 
-# Deploy Stage (replace placeholders with your actual deployment commands)
+# Deploy Stage
 deploy-job:
   stage: deploy
   environment: production
