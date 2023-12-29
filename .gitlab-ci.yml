@@ -1,11 +1,11 @@
 image: my-base-image:latest  # Replace with a suitable base image for your project
 
 stages:
-  - security  # Stage for security scans
-  - code-quality  # Stage for code quality analysis
-  - build  # Stage for building the application
-  - test  # Stage for running tests
-  - deploy  # Stage for deployment
+  - security
+  - code-quality
+  - build
+  - test
+  - deploy
 
 # Security Scan with Snyk
 snyk-scan:
@@ -31,7 +31,7 @@ build-job:
   stage: build
   script:
     - echo "Compiling the code..."
-    - # Your actual build commands here
+    - # Your actual build commands here  (make sure they are within the list)
     - echo "Compile complete."
 
 # Test Stage (replace placeholders with your actual test commands)
