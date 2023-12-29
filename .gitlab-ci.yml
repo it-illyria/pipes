@@ -34,3 +34,5 @@ docker-build:
     - if: $CI_COMMIT_BRANCH
       exists:
         - Dockerfile
+include:
+  - template: Jobs/Code-Quality.gitlab-ci.yml
