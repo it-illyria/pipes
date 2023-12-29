@@ -1,3 +1,8 @@
 import { Routes } from '@angular/router';
+import { HeroComponent } from './components';
 
-export const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: HeroComponent },
+];
+
+export const appRoutes = routes;
