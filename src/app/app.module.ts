@@ -7,11 +7,12 @@ import * as fromComponents from "./components";
 import * as fromPipes from "./pipes";
 import {NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule} from "ngx-ui-loader";
 import {RouterLink} from "@angular/router";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [...fromComponents.components, ...fromPipes.pipes,],
-  imports: [CommonModule, BrowserModule, BrowserAnimationsModule, HttpClientModule, NgxUiLoaderModule, NgxUiLoaderRouterModule,
+  imports: [CommonModule, BrowserModule, BrowserAnimationsModule, HttpClientModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, FormsModule, ReactiveFormsModule,
     NgxUiLoaderHttpModule.forRoot({showForeground: true})]
 })
 export class AppModule {

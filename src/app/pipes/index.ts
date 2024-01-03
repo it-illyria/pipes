@@ -3,9 +3,10 @@ import {AlarmPipe} from "./alarm.pipe";
 import {ChoicePipe} from "./choice.pipe";
 import {LocationPipe} from "./location.pipe";
 import {DifficultyPipe} from "./difficulty.pipe";
+import {QuizPipe} from "./quiz.pipe";
 
 export const pipes: any[] = [
-  PathPipe, AlarmPipe, ChoicePipe, LocationPipe, DifficultyPipe
+  PathPipe, AlarmPipe, ChoicePipe, LocationPipe, DifficultyPipe, QuizPipe
 ]
 
 export * from './path.pipe'

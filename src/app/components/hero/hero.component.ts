@@ -28,9 +28,8 @@ export class HeroComponent {
   getLinkForCurrentChoice(): string {
     switch (this.currentChoice) {
       case 'catwalk':
-        return '/pipe-network';
       case 'pipes':
-        return '/pipe-network';
+        return `/pipe-network/${this.currentChoice}`;
       default:
         return '/';
     }
