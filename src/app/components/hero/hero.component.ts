@@ -1,38 +1,42 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
+import { ChoicePipe } from "../../pipes";
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  styleUrls: ['./hero.component.css'],
+  providers: [ChoicePipe]
 })
 export class HeroComponent {
 
-  constructor(private router: Router) {}
+  currentChoice: string = '';
 
-  onPathChoice(event: any) {
-    // Extract the chosen path from the event
-    const choice: string = event.choice;
+  constructor(private router: Router, private choicePipe: ChoicePipe) {}
 
-    // Your existing logic to navigate based on the choice
-    if (choice === 'catwalk') {
-      this.router.navigate(['/catwalk']);
-    } else if (choice === 'pipes') {
-      this.router.navigate(['/pipes']);
+  onPathChoice(choice: string) {
+    this.currentChoice = choice;
+  }
+
+  continueWithChoice() {
+    const link = this.getLinkForCurrentChoice();
+    if (link) {
+      this.router.navigate([link]);
     }
   }
 
-
-  // Simulating the behavior of the PathPipe
-  formatPathDescription(path: string): string {
-    switch (path) {
+  getLinkForCurrentChoice(): string {
+    switch (this.currentChoice) {
       case 'catwalk':
-        return 'the enchanted Catwalks of Whisperfall';
+        return '/pipe-network';
       case 'pipes':
-        return 'the forbidden Pipes of Whisperfall';
+        return '/pipe-network';
       default:
-        return '';
+        return '/';
     }
   }
 
+  formatPathDescription(path: string): string {
+    return this.choicePipe.transform(path);
+  }
 }

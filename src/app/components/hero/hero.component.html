@@ -1,5 +1,12 @@
-<h1>Welcome to the Whispering Mountains</h1>
-<p>As Kai stands at the crossroads, the hero must make a decision.</p>
-<p>
-  {{ 'Kai embarks on ' + formatPathDescription('catwalk') }}
-</p>
+<h1 class="header">The Catwalk or High Path Choice</h1>
+<p>Kai, now standing at the edge of the village, gazed up at the towering mountains. The decision loomed ahead – two paths, each fraught with peril. To the left,
+  a narrow catwalk clung precariously to the sheer mountain wall, while to the right, a dizzying network of pipes hung high above, casting shadows over Stonehearth.</p>
+<p>As Kai approached the crossroads, the air thickened with tension. The catwalk, weathered and rusted, swayed gently in the mountain breeze.
+  The pipes, a labyrinth suspended in the sky, hummed with an eerie melody. The choice was yours. With a determined nod, Kai set forth, ready to face the unknown.</p><label>
+  <input type="radio" name="pathChoice" (change)="onPathChoice('catwalk')"> Choose Catwalk
+</label>
+<label>
+  <input type="radio" name="pathChoice" (change)="onPathChoice('pipes')"> Choose Pipes
+</label>
+<p>{{ 'Kai embarks on ' + formatPathDescription(currentChoice) }}</p>
+<button (click)="continueWithChoice()">Continue</button>
