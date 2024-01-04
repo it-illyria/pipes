@@ -1,14 +1,1 @@
 <h1 class="header">Navigating the {{ chosenPath }} Path</h1>
-
-<p *ngIf="chosenPath === 'catwalk' && !catwalkScenarioComplete">
-  Kai faces a series of unstable platforms on the catwalk. He needs to carefully navigate through them to proceed.
-  <br />
-  <ng-container *ngIf="catwalkQuizProgress < 3">
-    <p>{{ getQuizMessage(catwalkQuizProgress) }}</p>
-    <button (click)="handleQuizAnswer()">Submit Answer</button>
-  </ng-container>
-</p>
-
-<p *ngIf="catwalkScenarioComplete">
-  Kai has successfully navigated the catwalk challenge.
-</p>
