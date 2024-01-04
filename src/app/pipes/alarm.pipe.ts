@@ -4,8 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class AlarmPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(malfunctioning: boolean): string {
+    return malfunctioning ? 'ALARM!' : '';
   }
 
 }

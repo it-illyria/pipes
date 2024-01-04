@@ -1,1 +1,28 @@
-<h1 class="header">Navigating the {{ chosenPath }} Path</h1>
+<h1 class="header">Navigating the <strong style="text-transform: uppercase">{{ chosenPath }}</strong> Path</h1>
+
+<div *ngIf="triggerAlarm()">
+  <p class="alert">Malfunction detected!</p>
+</div>
+
+<p *ngIf="currentSegment">
+  Current path segment: {{ displayPath() }}
+  <br>
+  Segment length: {{ currentSegment.length }}
+  <br>
+  Segment material: {{ currentSegment.material }}
+</p>
+
+<p *ngIf="!currentSegment">Loading segment data...</p>
+
+<div *ngIf="chosenPath === 'catwalk'">
+  <p>The catwalk offers a scenic view of the surrounding area.</p>
+</div>
+
+<div *ngIf="chosenPath === 'pipes'">
+  <p>The pipes provide a direct but often challenging route.</p>
+</div>
+
+<p>Available choices: {{ formattedChoices }}</p>
+<p>Current location: {{ formattedLocation }}</p>
+
+<button (click)="handleScenario()">Take Next Action</button>

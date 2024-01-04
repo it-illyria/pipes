@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChoicePipe } from "../../pipes";
+import {ChoicePipe, CHOICES} from "../../pipes";
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css'],
-  providers: [ChoicePipe]
+  providers: [ChoicePipe,
+    { provide: CHOICES, useValue: ['Catwalk', 'Pipes'] },
+  ]
 })
 export class HeroComponent {
 

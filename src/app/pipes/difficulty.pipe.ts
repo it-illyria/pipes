@@ -4,8 +4,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class DifficultyPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(data: any, difficulty: 'easy' | 'normal' = 'easy'): any {
+    switch (difficulty) {
+      case 'easy':
+        break;
+      case 'normal':
+        break;
+    }
+    return data;
   }
 
 }
